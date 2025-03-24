@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Исходные файлы">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Файлы заголовков">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Файлы ресурсов">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Файлы заголовков\UI">
+      <UniqueIdentifier>{e6e3f6e8-fa62-4206-8f4b-f57c2c4fc311}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Graphics">
+      <UniqueIdentifier>{522f3383-9b5f-45e7-a277-2c77e83c91bc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Game">
+      <UniqueIdentifier>{64474213-2830-4cb0-b259-b32b72b413b2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Game\Entities">
+      <UniqueIdentifier>{238bf7d8-a22c-48a2-aaec-29aab2ed16c5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Game">
+      <UniqueIdentifier>{9161bee0-4f7e-4bdf-bbac-29b384237110}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Graphics">
+      <UniqueIdentifier>{d403307b-a4de-44c4-9f2f-ab8a86efc4df}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\UI">
+      <UniqueIdentifier>{3954a311-97fb-43c0-adc1-7256c66592ab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Game\Entities\SlotMachine">
+      <UniqueIdentifier>{965adae9-2cbf-42ac-a79d-a6172abb9be9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Game\Entities\SlotMachine\State">
+      <UniqueIdentifier>{7260f6b4-1155-4e8d-a8b1-7da4b73af65b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Game\Entities">
+      <UniqueIdentifier>{3e6e57e6-f0c3-4a30-b970-cdf12dab994f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Game\Entities\SlotMachine">
+      <UniqueIdentifier>{0c2c2ef4-5794-46e8-a593-604212cd41a7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Game\Entities\SlotMachine\State">
+      <UniqueIdentifier>{66e8e51a-d41f-4494-a287-528b89f19915}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Game\GameRule">
+      <UniqueIdentifier>{db68b6c5-ad91-4a8f-9309-e6ac4845a5c6}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="Game.cpp">
+      <Filter>Исходные файлы\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="SlotMachineState.cpp">
+      <Filter>Исходные файлы\Game\Entities\SlotMachine\State</Filter>
+    </ClCompile>
+    <ClCompile Include="UI.cpp">
+      <Filter>Исходные файлы\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene.cpp">
+      <Filter>Исходные файлы\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Reel.cpp">
+      <Filter>Исходные файлы\Game\Entities\SlotMachine</Filter>
+    </ClCompile>
+    <ClCompile Include="SlotMachine.cpp">
+      <Filter>Исходные файлы\Game\Entities\SlotMachine</Filter>
+    </ClCompile>
+    <ClCompile Include="TextField.hpp">
+      <Filter>Файлы заголовков\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="TexturePool.cpp">
+      <Filter>Исходные файлы\Graphics</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="SlotMachineState.hpp">
+      <Filter>Файлы заголовков\Game\Entities\SlotMachine\State</Filter>
+    </ClInclude>
+    <ClInclude Include="UI.hpp">
+      <Filter>Файлы заголовков\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene.hpp">
+      <Filter>Файлы заголовков\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="IEntity.hpp">
+      <Filter>Файлы заголовков\Game\Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="Game.hpp">
+      <Filter>Файлы заголовков\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Button.hpp">
+      <Filter>Файлы заголовков\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="Reel.hpp">
+      <Filter>Файлы заголовков\Game\Entities\SlotMachine</Filter>
+    </ClInclude>
+    <ClInclude Include="SlotMachine.hpp">
+      <Filter>Файлы заголовков\Game\Entities\SlotMachine</Filter>
+    </ClInclude>
+    <ClInclude Include="IGameRule.hpp">
+      <Filter>Файлы заголовков\Game\GameRule</Filter>
+    </ClInclude>
+    <ClInclude Include="ReelSymbol.hpp">
+      <Filter>Файлы заголовков\Game\Entities\SlotMachine</Filter>
+    </ClInclude>
+    <ClInclude Include="Command.hpp">
+      <Filter>Файлы заголовков\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="TexturePool.hpp">
+      <Filter>Файлы заголовков\Graphics</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
