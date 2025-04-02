@@ -6,15 +6,15 @@
 
 class ReelSymbol : public IEntity {
 public:
-	ReelSymbol(sf::Sprite sprite, size_t id)
+	ReelSymbol(const sf::Sprite& sprite, size_t id)
 		: m_sprite(sprite), m_id(id)
 	{}
 
-	void moveTo(const sf::Vector2f offset) {
+	void moveTo(const sf::Vector2f& offset) {
 		m_sprite.move(offset);
 	}
 
-	void setSpritePosition(const sf::Vector2f offset) {
+	void setSpritePosition(const sf::Vector2f& offset) {
 		m_sprite.setPosition(offset);
 	}
 

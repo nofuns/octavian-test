@@ -15,7 +15,7 @@ void WaitingState::update() {
 
 }
 
-void WaitingState::handle_input(Command cmd) {
+void WaitingState::handle_input(const Command& cmd) {
 	if (cmd == Command::START_ROLLING)
 		change_state();
 }
@@ -38,7 +38,7 @@ void RollingState::update() {
 		change_state();
 }
 
-void RollingState::handle_input(Command cmd) {
+void RollingState::handle_input(const Command& cmd) {
 	if (cmd == Command::END_ROLLING)
 		change_state();
 }
@@ -58,7 +58,7 @@ void AlignState::update() {
 		change_state();
 }
 
-void AlignState::handle_input(Command cmd) {
+void AlignState::handle_input(const Command& cmd) {
 
 }
 
@@ -77,6 +77,6 @@ void WinningState::update() {
 	change_state();
 }
 
-void WinningState::handle_input(Command cmd) {
+void WinningState::handle_input(const Command& cmd) {
 
 }

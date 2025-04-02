@@ -5,7 +5,7 @@
 
 class Button {
 public:
-    Button(const sf::Texture& texture, std::string text, sf::Vector2f location, std::function<void()> callback)
+    Button(const sf::Texture& texture, const std::string& text, sf::Vector2f location, const std::function<void()>& callback)
         : m_sprite(texture), m_onClickCallback(callback)
     {
         m_sprite.setPosition(location);
@@ -22,6 +22,7 @@ public:
                 onClick();
             }
         }
+
     }
 
     void draw(sf::RenderWindow& window) {

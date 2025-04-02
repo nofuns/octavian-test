@@ -1,8 +1,8 @@
 #include "Reel.hpp"
 
-#include <random>
+#include "Random.hpp"
 
-Reel::Reel(const std::vector<sf::Sprite>& sprites)
+Reel::Reel(const std::vector<sf::Sprite>& sprites, Random& random)
     : m_symbols(), m_symbolsPos(), m_position({ 0, 0 }), m_isRolling(false), m_isAligning(false), m_velocity(700.f), m_alignOffset(0.f)
 {
     
@@ -11,10 +11,7 @@ Reel::Reel(const std::vector<sf::Sprite>& sprites)
         m_symbols.back().setSpritePosition({ m_position.x, m_position.y + i * m_spriteSize.y });
     }
 
-    // Перетасовка символов
-    std::random_device rd;
-    std::mt19937 gen(rd());
-    std::shuffle(m_symbols.begin(), m_symbols.end(), gen);
+    std::shuffle(m_symbols.begin(), m_symbols.end(), random.getEngine());
 
     for (auto& symbol : m_symbols) {
         m_symbolsPos.push_back(symbol.getId());
@@ -54,7 +51,7 @@ void Reel::setPosition(const sf::Vector2f& newPos) {
     }
 }
 
-void Reel::shiftBy(const int32_t shift) {
+void Reel::shiftBy(const int32_t& shift) {
     std::rotate(m_symbolsPos.rbegin(), m_symbolsPos.rbegin() + (shift % m_symbols.size()), m_symbolsPos.rend());
 }
 
@@ -66,7 +63,7 @@ bool Reel::isAligning() const {
     return m_isAligning;
 }
 
-sf::Vector2i Reel::getSymbolSize() {
+sf::Vector2i Reel::getSymbolSize() const {
     return m_spriteSize;
 }
 

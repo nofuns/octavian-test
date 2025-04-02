@@ -119,5 +119,8 @@
     <ClInclude Include="TexturePool.hpp">
       <Filter>Файлы заголовков\Graphics</Filter>
     </ClInclude>
+    <ClInclude Include="Random.hpp">
+      <Filter>Файлы заголовков\Game</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

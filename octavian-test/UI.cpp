@@ -6,11 +6,11 @@ void UserInterface::checkClick(const sf::Vector2i& mousePos) {
 	}
 }
 
-void UserInterface::addButton(std::string key, std::unique_ptr<Button> button) {
+void UserInterface::addButton(const std::string& key, std::unique_ptr<Button> button) {
 	m_buttons[key] = std::move(button);
 }
 
-void UserInterface::addTextField(std::string key, std::unique_ptr<TextField> textField) {
+void UserInterface::addTextField(const std::string& key, std::unique_ptr<TextField> textField) {
 	m_textFields[key] = std::move(textField);
 }
 
