@@ -8,6 +8,9 @@
 
 int main()
 {
-    Game game;
-    game.loop();
+    std::unique_ptr<Game> game = std::make_unique<Game>();
+   
+    game->loop();
+
+    return 0;
 }

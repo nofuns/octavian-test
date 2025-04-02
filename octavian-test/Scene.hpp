@@ -11,7 +11,7 @@ class Scene : public IEntity {
 public:
 	Scene() = default;
 
-	void addEntity(const std::string name, std::shared_ptr<IEntity> entity);
+	void addEntity(const std::string& name, std::shared_ptr<IEntity> entity);
 
 	void draw(sf::RenderWindow& window) override;
 

@@ -3,7 +3,7 @@
 #include "SFML/Graphics.hpp"
 
 
-void Scene::addEntity(const std::string name, std::shared_ptr<IEntity> entity) {
+void Scene::addEntity(const std::string& name, std::shared_ptr<IEntity> entity) {
 	m_entities[name] = entity;
 }
 

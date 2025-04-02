@@ -5,7 +5,7 @@
 class TextField {
 private:
 	std::unique_ptr<sf::Text> m_text;
-	sf::Font* m_font;
+	std::unique_ptr<sf::Font> m_font;
 	uint32_t m_charSize;
 
 	sf::Vector2f m_position;	
@@ -13,11 +13,10 @@ private:
 public:
 	TextField() = delete;
 
-	explicit TextField(std::string fontPath, sf::Vector2f position, std::string text = "", uint32_t charSize = 50)
+	explicit TextField(const std::string& fontPath,  sf::Vector2f position, const std::string& text = "", uint32_t charSize = 50)
 		: m_position(position)
 	{
-		m_font = new sf::Font(fontPath);
-
+		m_font = std::make_unique<sf::Font>(fontPath);
 		m_text = std::make_unique<sf::Text>(*m_font, text, charSize);
 		m_text->setStyle(sf::Text::Bold);
 		m_text->setPosition(m_position);

@@ -8,7 +8,7 @@ class SlotMachine;
 
 class StateBase {
 protected:
-	SlotMachine* m_slotMachine = nullptr;
+	SlotMachine* m_slotMachine = nullptr; 
 
 public:
 	StateBase() = default;
@@ -17,7 +17,7 @@ public:
 
 	virtual void change_state() = 0;
 	virtual void update() = 0;
-	virtual void handle_input(Command cmd) = 0;
+	virtual void handle_input(const Command& cmd) = 0;
 };
 
 class WaitingState : public StateBase {
@@ -30,7 +30,7 @@ public:
 
 	void update() override;
 
-	void handle_input(Command cmd) override;
+	void handle_input(const Command& cmd) override;
 };
 
 class RollingState : public StateBase {
@@ -48,7 +48,7 @@ public:
 
 	void update() override;
 
-	void handle_input(Command cmd) override;
+	void handle_input(const Command& cmd) override;
 };
 
 class AlignState : public StateBase {
@@ -66,7 +66,7 @@ public:
 
 	void update() override;
 
-	void handle_input(Command cmd) override;
+	void handle_input(const Command& cmd) override;
 };
 
 class WinningState : public StateBase {
@@ -79,5 +79,5 @@ public:
 
 	void update() override;
 
-	void handle_input(Command cmd) override;
+	void handle_input(const Command& cmd) override;
 };

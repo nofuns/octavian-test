@@ -6,23 +6,24 @@
 #include <vector>
 #include <SFML/Graphics.hpp>
 
+class Random;
 
 class Reel : public IEntity {
 public:
-    explicit Reel(const std::vector<sf::Sprite>& _sprites);
+    explicit Reel(const std::vector<sf::Sprite>& _sprites, Random& random);
 
     ~Reel() = default;
 
     void startSpin();
     void endSpin();
 
-    void shiftBy(const int32_t shift);
+    void shiftBy(const int32_t& shift);
 
     bool isSpinning() const;
     
     bool isAligning() const;
    
-    sf::Vector2i getSymbolSize();
+    sf::Vector2i getSymbolSize() const;
 
     void setPosition(const sf::Vector2f& newPos);
 

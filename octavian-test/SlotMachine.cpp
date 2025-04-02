@@ -6,15 +6,22 @@
 #include <random>
 
 
-SlotMachine::SlotMachine(std::vector<sf::Sprite> reelSprites, size_t reelsCount, std::unique_ptr<IGameRule> gameRule)
-    : m_reels(), m_state(std::make_unique<WaitingState>(this)), m_position({ 0, 0 }), m_totalScore(0), m_scoreCalcRule(std::move(gameRule))
+SlotMachine::SlotMachine(const std::vector<sf::Sprite>& reelSprites, const size_t& reelsCount, std::unique_ptr<IGameRule> gameRule)
+    : m_reels(),
+    m_state(std::make_unique<WaitingState>()),
+    m_position({ 0, 0 }),
+    m_totalScore(0),
+    m_scoreCalcRule(std::move(gameRule)),
+    m_random(0, 20)
 {
+    m_reels.reserve(reelsCount);
     for (size_t i = 0; i < reelsCount; ++i) {
-        m_reels.push_back(Reel(reelSprites));
+        m_reels.emplace_back(Reel(reelSprites, m_random));
     }
 
-
     setPosition(m_position);
+
+    m_state = std::make_unique<WaitingState>(this);
 }
 
 void SlotMachine::setPosition(const sf::Vector2f& newPos) {
@@ -26,7 +33,7 @@ void SlotMachine::setPosition(const sf::Vector2f& newPos) {
     }
 }
 
-void SlotMachine::handle_input(Command cmd) {
+void SlotMachine::handle_input(const Command& cmd) {
     m_state.get()->handle_input(cmd);
 }
 
@@ -38,7 +45,7 @@ bool SlotMachine::isAligned() const {
     return true;
 }
 
-std::vector<ReelSymbol> SlotMachine::getCentralSymbols() {
+std::vector<ReelSymbol> SlotMachine::getCentralSymbols() const {
     std::vector<ReelSymbol> centerSymbols;
     centerSymbols.reserve(m_reels.size());
 
@@ -49,23 +56,18 @@ std::vector<ReelSymbol> SlotMachine::getCentralSymbols() {
     return centerSymbols;
 }
 
-int32_t SlotMachine::getTotalScore() const {
+int64_t SlotMachine::getTotalScore() const {
     return m_totalScore;
 }
 
-int32_t SlotMachine::calcScore() {
+int64_t SlotMachine::calcScore() {
     m_totalScore += m_scoreCalcRule->calculateScore(getCentralSymbols());
     return m_totalScore;
 }
 
 void SlotMachine::startReelsRotation() {
-
-    std::random_device rd;
-    std::mt19937 gen(rd()); 
-    std::uniform_int_distribution<int> dist(1, 20);
-
     for (auto& reel : m_reels) {
-        reel.shiftBy(dist(gen));
+        reel.shiftBy(m_random.getInt());
         reel.startSpin();
     }
 }
